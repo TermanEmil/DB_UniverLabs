@@ -32,10 +32,10 @@
     - `116,2` is the answer, because it has 3 digits before the decimal and 1 digit after the decimal.
 2. Consider Col1 is `INT` and Col2 is `DECIMAL(2, 1)`. What type Col3 should be to contain the result of **Col1 * Col2**?
 
-        | Col1 | Col2 | Col3 |
-        |------|------|------|
-        | 1    | 1.0  | ?    |
-        | 2    | 1.0  | ?    |
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| 1    | 1.0  | ?    |
+| 2    | 1.0  | ?    |
 
   In order to save the result of multiplication Col3 must have DECIMAL(2, 1) as type, since `DECIMAL` has higher precedence than `INT`.
 
