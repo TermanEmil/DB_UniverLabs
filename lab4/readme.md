@@ -83,6 +83,7 @@ MS SQL Server provides the top syntax that can be used in SQL select queries to 
 ## Practical assignments
 ### Task 5
 Sa se afiseze lista studentilor al caror nume se termina in ,,u"
+
 [Link to code](./src/ex5.sql) - 15 results.
 
 ![task5](./imgs/task5.png)
