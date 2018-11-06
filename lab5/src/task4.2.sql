@@ -1,7 +1,7 @@
 DECLARE @except_grades TABLE (val INT)
-insert @except_grades(val) VALUES(6), (8)
+insert @except_grades(val) VALUES(6), (8), (11)
 
--- Raise error if one of the specified except_grades is invalid
+-- Raise error and Exit if one of the specified except_grades is invalid
 BEGIN TRY
     IF EXISTS(SELECT * FROM @except_grades WHERE val < 0 OR val > 10)
         RAISERROR ('Invalid grade', 16, 1);
