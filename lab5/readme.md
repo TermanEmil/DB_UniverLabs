@@ -90,29 +90,29 @@ PRINT @N3;
 PRINT 'Mai mare = ' + CAST(@MAI_MARE AS VARCHAR(2));
 ~~~
 
-**Solved**: [link to code](./srcs/task1.sql)
+**Solved**: [link to code](./src/task1.sql)
 
 ### Task 2
 
 #### Condition
 Afisati primele zece date (numele, prenumele studentului) in functie de valoarea notei (cu exceptia notelor 6 si 8) a studentului la primul test al disciplinei Baze de date, folosind structura de altemativa IF...ELSE. Sa se foloseasca variabilele.
 
-**Solved**: [link to code](./srcs/task2.sql)
+**Solved**: [link to code](./src/task2.sql)
 
 ### Task 3
 
 #### Condition
 Rezolvati aceesi sarcina, 1, apeland la structura selectiva CASE.
 
-**Solved**: [link to code](./srcs/task3.sql)
+**Solved**: [link to code](./src/task3.sql)
 
 ### Task 4
 
 Modificati exercitiile din sarcinile 1 si 2 pentru a include procesarea erorilor cu TRY si CATCH, si RAISERRROR.
 
-**Solved 4.1**: [link to code](./srcs/task4.1.sql)
+**Solved 4.1**: [link to code](./src/task4.1.sql)
 
-**Solved 4.2**: [link to code](./srcs/task4.2.sql)
+**Solved 4.2**: [link to code](./src/task4.2.sql)
 
 ## Conclusion
 There could be better exercises.
