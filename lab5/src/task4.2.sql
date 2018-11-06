@@ -20,4 +20,4 @@ JOIN discipline
 WHERE
     Tip_Evaluare = 'Testul 1' AND
     Disciplina = 'Baze de date' AND
-    Nota IN (SELECT IIF(Nota IN (SELECT val FROM @except_grades), Nota, NULL))
+    Nota IN (SELECT IIF(Nota IN (SELECT val FROM @except_grades), NULL, Nota))
