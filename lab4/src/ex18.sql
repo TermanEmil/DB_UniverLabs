@@ -19,6 +19,8 @@ WHERE
         GROUP BY sr2.Id_Profesor
     )
 
+
+
 SELECT DISTINCT
     Nume_Profesor,
     Prenume_Profesor,
