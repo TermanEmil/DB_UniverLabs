@@ -1,0 +1,7 @@
+3 relatii 
+1 : 1
+1 : n
+n : n
+
+So, minimum 4 tabele (1 intermediar for n:n).
+Populare de 5 recorduri.
