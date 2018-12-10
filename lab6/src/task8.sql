@@ -1,31 +1,40 @@
-if exists (select * from sys.filegroups where name='userdatafgroup')
-begin
-    ALTER DATABASE universitatea 
-    REMOVE FILEGROUP userdatafgroup;
-
-    ALTER DATABASE universitatea
-    REMOVE FILE index_lab6;
-end;
+DROP PROCEDURE IF EXISTS long_proc
 GO
 
-ALTER DATABASE universitatea 
-ADD FILEGROUP userdatafgroup;
+CREATE PROCEDURE long_proc
+AS
+BEGIN
+    DECLARE @i INT = 0;
+
+    SET FMTONLY OFF
+    WHILE @i < 500
+    BEGIN
+        SELECT *
+        FROM studenti_reusita sr
+        JOIN grupe ON grupe.Id_Grupa = sr.Id_Grupa
+        WHERE Cod_Grupa = 'TI171'
+
+        SET @i = @i + 1;
+    END
+END
 GO
 
-ALTER DATABASE universitatea  
-ADD FILE   
-(  
-    NAME = index_lab6,  
-    FILENAME = '/Users/unicornslayer/emil.ndf',  
-    SIZE = 10MB,  
-    MAXSIZE = 100MB,  
-    FILEGROWTH = 10%  
-)   
-TO FILEGROUP userdatafgroup;  
+-- Test performance without index
+DROP INDEX IF EXISTS ix_grupe_cod_grupa ON grupe;
 GO
 
-create nonclustered index create_index on grupe(Id_Grupa) on [userdatafgroup]
-
+EXEC long_proc;
 GO
 
-select * from sys.indexes
+-- Test performance with index
+DROP INDEX IF EXISTS ix_grupe_cod_grupa ON grupe;
+GO
+
+CREATE UNIQUE INDEX ix_grupe_cod_grupa
+ON grupe(Cod_Grupa);
+GO
+
+EXEC long_proc;
+GO
+
+EXEC sp_helpindex grupe
