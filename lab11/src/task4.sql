@@ -1,0 +1,7 @@
+DROP DATABASE IF EXISTS universitatea_lab11;
+GO
+
+RESTORE DATABASE universitatea_lab11
+FROM device0
+WITH NORECOVERY
+GO
