@@ -1,8 +1,7 @@
-EXEC sp_addumpdevice 'DISK', 'device1', '/Users/unicornslayer/Downloads/exercitiul2.bak'
+EXEC sp_dropdevice 'device_diff', 'delfile';
+GO
+EXEC sp_addumpdevice 'DISK', 'device_diff', '/Users/unicornslayer/Downloads/exercitiul2.bak'
 GO
 
-BACKUP DATABASE universitatea TO device1 WITH DIFFERENTIAL
-GO
-
-EXEC sp_dropdevice 'device1', 'delfile';
+BACKUP DATABASE universitatea TO device_diff WITH DIFFERENTIAL
 GO
